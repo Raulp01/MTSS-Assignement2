@@ -114,6 +114,29 @@ public class RomanPrinterTest {
         assertEquals(letter_XVI, value_XVI);
     }
 
+    @Test
+    public void firstFiftyNumbers() {
+
+        String letter_L = " _       \n" +
+                "| |      \n" +
+                "| |      \n" +
+                "| |      \n" +
+                "| |____  \n" +
+                "|______| \n";
+        String letter_XXV = "__   __ __   __ __      __ \n" +
+                "\\ \\ / / \\ \\ / / \\ \\    / / \n" +
+                " \\ V /   \\ V /   \\ \\  / /  \n" +
+                "  > <     > <     \\ \\/ /   \n" +
+                " / . \\   / . \\     \\  /    \n" +
+                "/_/ \\_\\ /_/ \\_\\     \\/     \n";
+
+        String value_L = RomanPrinter.print(50);
+        String value_XXV = RomanPrinter.print(25);
+
+        assertEquals(letter_L, value_L);
+        assertEquals(letter_XXV, value_XXV);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void ReceiveEmptyString() {
         RomanPrinter.printAsciiArt("");
