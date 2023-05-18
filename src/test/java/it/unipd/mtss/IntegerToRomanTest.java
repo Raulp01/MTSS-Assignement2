@@ -79,6 +79,21 @@ public class IntegerToRomanTest {
         assertEquals("XVIII", num18);
         assertEquals("XX", num20);
     }
+    
+    @Test
+    public void TestPrimi50Numeri() {
+
+        String num40;
+        String num50;
+      
+        num40 = IntegerToRoman.convert(40);
+        num50 = IntegerToRoman.convert(50);
+      
+
+        assertEquals("XL", num40);
+        assertEquals("L", num50);
+     
+    }
 
     @Test(expected = IllegalArgumentException.class)
     public void OutofRangeMin() {
@@ -87,7 +102,7 @@ public class IntegerToRomanTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void OutofRangeMax() {
-        IntegerToRoman.convert(21);
+        IntegerToRoman.convert(51);
     }
 
 }
