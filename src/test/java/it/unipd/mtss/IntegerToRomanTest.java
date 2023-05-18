@@ -27,9 +27,26 @@ public class IntegerToRomanTest {
 
     }
     
+    @Test
+    public void TestPrimi6Numeri() {
+
+        String num4;
+        String num5;
+        String num6;
+
+        num4 = IntegerToRoman.convert(4);
+        num5 = IntegerToRoman.convert(5);
+        num6 = IntegerToRoman.convert(6);
+
+        assertEquals("IV", num4);
+        assertEquals("V", num5);
+        assertEquals("VI", num6);
+
+    }
+    
     @Test(expected = IllegalArgumentException.class)
     public void OutofRange() {
-        IntegerToRoman.convert(4);
+        IntegerToRoman.convert(7);
     }
 
 }
