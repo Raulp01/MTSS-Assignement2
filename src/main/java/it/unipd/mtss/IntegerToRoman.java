@@ -11,13 +11,13 @@ public class IntegerToRoman {
 
         String roman = "";
 
-        if (number <= 0 || number >= 7) {
+        if (number <= 0 || number >= 11) {
             throw new IllegalArgumentException();
         }
 
 
-        if (number <= 6) {
-            String array1[] = { "", "I", "II", "III", "IV", "V", "VI"};
+        if (number <= 10) {
+            String array1[] = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
             roman = roman + array1[number];
         }
 
