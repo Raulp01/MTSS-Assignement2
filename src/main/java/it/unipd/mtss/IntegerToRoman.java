@@ -11,8 +11,18 @@ public class IntegerToRoman {
 
         String roman = "";
 
-        if (number <= 0 || number >= 21) {
+        if (number <= 0 || number >= 51) {
             throw new IllegalArgumentException();
+        }
+        
+        if(number >= 50) {
+            roman = roman + "L";
+            number = number - 50;
+        }
+        
+        if (number >= 40) {
+            roman = roman + "XL";
+            number = number - 40;
         }
 
         while (number >= 10) {
