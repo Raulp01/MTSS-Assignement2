@@ -44,9 +44,34 @@ public class IntegerToRomanTest {
 
     }
     
+    @Test
+    public void TestPrimi10Numeri() {
+
+        String num7;
+        String num8;
+        String num9;
+        String num10;
+
+        num7 = IntegerToRoman.convert(7);
+        num8 = IntegerToRoman.convert(8);
+        num9 = IntegerToRoman.convert(9);
+        num10 = IntegerToRoman.convert(10);
+        
+        assertEquals("VII", num7);
+        assertEquals("VIII", num8);
+        assertEquals("IX", num9);
+        assertEquals("X", num10);
+
+    }
+    
     @Test(expected = IllegalArgumentException.class)
-    public void OutofRange() {
-        IntegerToRoman.convert(7);
+    public void OutofRangeMin() {
+        IntegerToRoman.convert(0);
+    }
+    
+    @Test(expected = IllegalArgumentException.class)
+    public void OutofRangeMax() {
+        IntegerToRoman.convert(11);
     }
 
 }
