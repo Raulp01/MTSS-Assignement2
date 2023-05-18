@@ -108,6 +108,19 @@ public class IntegerToRomanTest {
 
     }
 
+    public void TestPrimi500Numeri() {
+
+        String num400;
+        String num500;
+
+        num400 = IntegerToRoman.convert(400);
+        num500 = IntegerToRoman.convert(500);
+
+        assertEquals("CD", num400);
+        assertEquals("D", num500);
+
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void OutofRangeMin() {
         IntegerToRoman.convert(0);
@@ -115,7 +128,7 @@ public class IntegerToRomanTest {
 
     @Test(expected = IllegalArgumentException.class)
     public void OutofRangeMax() {
-        IntegerToRoman.convert(101);
+        IntegerToRoman.convert(501);
     }
 
 }
