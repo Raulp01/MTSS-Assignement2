@@ -11,20 +11,24 @@ public class IntegerToRoman {
 
         String roman = "";
 
-        if (number <= 0 || number >= 11) {
+        if (number <= 0 || number >= 21) {
             throw new IllegalArgumentException();
         }
 
+        while (number >= 10) {
+            number -= 10;
+            roman = roman + "X";
+        }
 
-        if (number <= 10) {
-            String array1[] = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"};
+        if (number > 0 && number < 10) {
+            String array1[] = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
             roman = roman + array1[number];
         }
 
-        /* Debug
-        System.out.println(roman);
-        */
-        
+        /*
+         * Debug System.out.println(roman);
+         */
+
         return roman;
 
     }

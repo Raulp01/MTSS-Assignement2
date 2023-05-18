@@ -91,6 +91,29 @@ public class RomanPrinterTest {
         assertEquals(letter_IX, value_IX);
     }
 
+    @Test
+    public void firstTwentyNumbers() {
+
+        String letter_XX = "__   __ __   __ \n" +
+                "\\ \\ / / \\ \\ / / \n" +
+                " \\ V /   \\ V /  \n" +
+                "  > <     > <   \n" +
+                " / . \\   / . \\  \n" +
+                "/_/ \\_\\ /_/ \\_\\ \n";
+        String letter_XVI = "__   __ __      __  _____  \n" +
+                "\\ \\ / / \\ \\    / / |_   _| \n" +
+                " \\ V /   \\ \\  / /    | |   \n" +
+                "  > <     \\ \\/ /     | |   \n" +
+                " / . \\     \\  /     _| |_  \n" +
+                "/_/ \\_\\     \\/     |_____| \n";
+
+        String value_XX = RomanPrinter.print(20);
+        String value_XVI = RomanPrinter.print(16);
+
+        assertEquals(letter_XX, value_XX);
+        assertEquals(letter_XVI, value_XVI);
+    }
+
     @Test(expected = IllegalArgumentException.class)
     public void ReceiveEmptyString() {
         RomanPrinter.printAsciiArt("");
