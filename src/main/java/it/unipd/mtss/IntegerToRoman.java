@@ -11,15 +11,25 @@ public class IntegerToRoman {
 
         String roman = "";
 
-        if (number <= 0 || number >= 51) {
+        if (number <= 0 || number >= 101) {
             throw new IllegalArgumentException();
         }
-        
-        if(number >= 50) {
+
+        int[] values = { 100, 90 };
+        String[] ro = { "C", "XC" };
+        for (int i = 0; i < values.length; i++) {
+            while (number >= values[i]) {
+                number = number - values[i];
+                roman = roman + ro[i];
+            }
+        }
+
+
+        if (number >= 50) {
             roman = roman + "L";
             number = number - 50;
         }
-        
+
         if (number >= 40) {
             roman = roman + "XL";
             number = number - 40;
@@ -31,7 +41,7 @@ public class IntegerToRoman {
         }
 
         if (number > 0 && number < 10) {
-            String array1[] = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
+            String array1[] = { "", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX" };
             roman = roman + array1[number];
         }
 
