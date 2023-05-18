@@ -64,6 +64,22 @@ public class IntegerToRomanTest {
 
     }
     
+    @Test
+    public void TestPrimi20Numeri() {
+
+        String num11;
+        String num18;
+        String num20;
+
+        num11 = IntegerToRoman.convert(11);
+        num18 = IntegerToRoman.convert(18);
+        num20 = IntegerToRoman.convert(20);
+
+        assertEquals("XI", num11);
+        assertEquals("XVIII", num18);
+        assertEquals("XX", num20);
+    }
+    
     @Test(expected = IllegalArgumentException.class)
     public void OutofRangeMin() {
         IntegerToRoman.convert(0);
@@ -71,7 +87,7 @@ public class IntegerToRomanTest {
     
     @Test(expected = IllegalArgumentException.class)
     public void OutofRangeMax() {
-        IntegerToRoman.convert(11);
+        IntegerToRoman.convert(21);
     }
 
 }
