@@ -191,6 +191,29 @@ public class RomanPrinterTest {
                 assertEquals(letter_CL, value_CL);
         }
 
+        @Test
+        public void firstThousands() {
+
+                String letter_M = " __  __  \n" +
+                                "|  \\/  | \n" +
+                                "| \\  / | \n" +
+                                "| |\\/| | \n" +
+                                "| |  | | \n" +
+                                "|_|  |_| \n";
+                String letter_DLX = " _____    _       __   __ \n" +
+                                "|  __ \\  | |      \\ \\ / / \n" +
+                                "| |  | | | |       \\ V /  \n" +
+                                "| |  | | | |        > <   \n" +
+                                "| |__| | | |____   / . \\  \n" +
+                                "|_____/  |______| /_/ \\_\\ \n";
+
+                String value_M = RomanPrinter.print(1000);
+                String value_DLX = RomanPrinter.print(560);
+
+                assertEquals(letter_M, value_M);
+                assertEquals(letter_DLX, value_DLX);
+        }
+
         @Test(expected = IllegalArgumentException.class)
         public void ReceiveEmptyString() {
                 RomanPrinter.printAsciiArt("");

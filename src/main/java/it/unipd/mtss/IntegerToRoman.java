@@ -11,12 +11,12 @@ public class IntegerToRoman {
 
         String roman = "";
 
-        if (number <= 0 || number >= 501) {
+        if (number <= 0 || number >= 1001) {
             throw new IllegalArgumentException();
         }
 
-        int[] values = { 500, 400, 100, 90 };
-        String[] ro = { "D", "CD", "C", "XC" };
+        int[] values = {1000, 900, 500, 400, 100, 90 };
+        String[] ro = { "M", "CM", "D", "CD", "C", "XC" };
         for (int i = 0; i < values.length; i++) {
             while (number >= values[i]) {
                 number = number - values[i];

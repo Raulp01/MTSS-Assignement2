@@ -27,6 +27,7 @@ public class RomanPrinter {
             romanHash.put('L', LetterL(i));
             romanHash.put('C', LetterC(i));
             romanHash.put('D', LetterD(i));
+            romanHash.put('M', LetterM(i));
             while (j < romanNumber.length()) {
                 char roman_letter = romanNumber.charAt(j);
                 romanLine += romanHash.get(roman_letter);
@@ -103,5 +104,16 @@ public class RomanPrinter {
                 { "|_____/  " } };
         letterD[i][0].replace("\n", "");
         return letterD[i][0];
+    }
+
+    private static String LetterM(int i) {
+        String letterM[][] = { { " __  __  " },
+                { "|  \\/  | " },
+                { "| \\  / | " },
+                { "| |\\/| | " },
+                { "| |  | | " },
+                { "|_|  |_| " } };
+        letterM[i][0].replace("\n", "");
+        return letterM[i][0];
     }
 }
