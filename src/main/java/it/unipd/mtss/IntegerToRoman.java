@@ -15,15 +15,14 @@ public class IntegerToRoman {
             throw new IllegalArgumentException();
         }
 
-        int[] values = {500 ,400 ,100, 90 };
-        String[] ro = { "D", "CD","C", "XC" };
+        int[] values = { 500, 400, 100, 90 };
+        String[] ro = { "D", "CD", "C", "XC" };
         for (int i = 0; i < values.length; i++) {
             while (number >= values[i]) {
                 number = number - values[i];
                 roman = roman + ro[i];
             }
         }
-
 
         if (number >= 50) {
             roman = roman + "L";

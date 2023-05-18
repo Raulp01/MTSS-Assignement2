@@ -160,6 +160,37 @@ public class RomanPrinterTest {
                 assertEquals(letter_LIX, value_LIX);
         }
 
+        @Test
+        public void firstFivehundredNumbers() {
+
+                String letter_D = " _____   \n" +
+                                "|  __ \\  \n" +
+                                "| |  | | \n" +
+                                "| |  | | \n" +
+                                "| |__| | \n" +
+                                "|_____/  \n";
+                String letter_CDXCIX = "  _____   _____   __   __   _____   _____  __   __ \n" +
+                                " / ____| |  __ \\  \\ \\ / /  / ____| |_   _| \\ \\ / / \n" +
+                                "| |      | |  | |  \\ V /  | |        | |    \\ V /  \n" +
+                                "| |      | |  | |   > <   | |        | |     > <   \n" +
+                                "| |____  | |__| |  / . \\  | |____   _| |_   / . \\  \n" +
+                                " \\_____| |_____/  /_/ \\_\\  \\_____| |_____| /_/ \\_\\ \n";
+                String letter_CL = "  _____   _       \n" +
+                                " / ____| | |      \n" +
+                                "| |      | |      \n" +
+                                "| |      | |      \n" +
+                                "| |____  | |____  \n" +
+                                " \\_____| |______| \n";
+
+                String value_D = RomanPrinter.print(500);
+                String value_CDXCIX = RomanPrinter.print(499);
+                String value_CL = RomanPrinter.print(150);
+
+                assertEquals(letter_D, value_D);
+                assertEquals(letter_CDXCIX, value_CDXCIX);
+                assertEquals(letter_CL, value_CL);
+        }
+
         @Test(expected = IllegalArgumentException.class)
         public void ReceiveEmptyString() {
                 RomanPrinter.printAsciiArt("");
